@@ -1,17 +1,13 @@
 'use strict';
+var numbers = [];
 // Use jQuery to programmatically generate a grid of numbers from 1 to 90
 for (var i = 1; i <= 90; i++) {
+    numbers.push(i);
     $('<div />', {
         'class' : 'number',
         'id'    : 'number' + i,
         'html' : i
     }).appendTo($('#numbers'));
-}
-
-var numbers = [];
-// Create an array of 90 consecutive numbers from 1 to 90
-for(var i = 1; i <=90; i+=1) {
-    numbers.push(i);
 }
 // Gets a number by picking a random index, and selecting a number from the numbers array
 // Then it splices the array at the index point, removing the selected number
@@ -21,12 +17,11 @@ var getNumber = function() {
     numbers.splice(index, 1);
     return theNumber;
 };
-
 // Whenever the user clicks on the button, generate a random number
 // Update the display with this number
 // Show the last number used in the lastNumber element
 // When the current number box is clicked, toggle a larger version above the grid
-// When all 90 numbers have gine, show an alert with 'No more numbers!'
+// When all 90 numbers have gone, show an alert with 'No more numbers!'
 $(document).ready(function() {
     $('#nextNumber').click(function() {
         if(numbers.length > 0) {
