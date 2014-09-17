@@ -1,5 +1,97 @@
 'use strict';
 var numbers = [];
+var slangs = [
+    "",
+    "Kelly's Eye",
+    "One Little Duck",
+    "Cup of Tea",
+    "Knock at the door",
+    "Man alive",
+    "Half-dozen",
+    "Lucky seven",
+    "Garden gate",
+    "Doctor's orders",
+    "David's Den",
+    "Legs eleven",
+    "One-dozen",
+    "Unlucky for some",
+    "",
+    "",
+    "Never been kissed",
+    "",
+    "",
+    "Goodbye teens",
+    "",
+    "Key of the door",
+    "Two little ducks",
+    "The lord is my shepherd",
+    "Knock at the door",
+    "",
+    "Two and six, half a crown",
+    "Duck and a crutch",
+    "Two and eight, in a state",
+    "",
+    "Dirty Gertie",
+    "",
+    "Buckle my shoe",
+    "All the threes",
+    "",
+    "Jump and jive",
+    "Three-dozen",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Droopy drawers",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Danny La Rue",
+    "Here comes Herbie",
+    "House with a bamboo door",
+    "All the fives",
+    "Shott's bus",
+    "Heinz varieties",
+    "",
+    "The Brighton Line",
+    "",
+    "",
+    "Tickety Boo",
+    "Zoo Lane",
+    "",
+    "",
+    "Clickety click",
+    "",
+    "Anyway up",
+    "",
+    "Bang on the drum",
+    "",
+    "",
+    "",
+    "",
+    "Trombones",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Seven-dozen",
+    "Stayin' alive",
+    "Between the sticks",
+    "Torquay in Devon",
+    "Two Fat Ladies",
+    "Almost there",
+    "Top of the shop"
+];
 // Use jQuery to programmatically generate a grid of numbers from 1 to 90
 for (var i = 1; i <= 90; i++) {
     numbers.push(i);
@@ -24,12 +116,14 @@ var getNumber = function() {
 // When all 90 numbers have gone, show an alert with 'No more numbers!'
 $(document).ready(function() {
     $('#nextNumber').click(function() {
+        $('#nextNumber').text('Next!');
         if(numbers.length > 0) {
-            var lastNum = $('#currNumber').html();
+            var lastNum = $('#number').html();
             $('#lastNumber').html(lastNum);
             var nextNumber = getNumber();
             $('#currNumber').html(nextNumber);
-            $('#bigNumber').html(nextNumber);
+            $('#number').html(nextNumber);
+            $('#slang').text(slangs[nextNumber]);
             $("div[id='number" + nextNumber + "']").removeClass().addClass('number chosen');
         } else {
             alert('No more numbers!');

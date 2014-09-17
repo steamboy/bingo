@@ -9,13 +9,17 @@
     <body>
         <div class="container">
             <div id="controls" class="controls">
-                <button id="nextNumber" class="btn btn-primary">Number!</button>
-
+                <button id="nextNumber" class="btn btn-primary">Start game</button>
                 <div id="currNumber" class="number current">?</div>
                 <div id="lastNumber" class="number last">?</div>
             </div>
-            <div id="numbers">
-                <div id="bigNumber" class="fullscreen" style="display:none;">?</div>
+            <div id="numbers" class="numbers">
+                <div id="slang"></div>
+                <div id="number-container" class="number-container">
+                    <section class="stage">
+                        <figure class="ball"><span class="shadow"></span><span class="ball-text" id="number">?</span></figure>
+                    </section>
+                </div
             </div>
         </div>
         <script src="bower_components/jquery/dist/jquery.js"></script>

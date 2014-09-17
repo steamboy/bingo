@@ -1,5 +1,6 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
-
+$chosen-color: #E611B3;
+$default-blue: #3EB9E9;
 // bower:scss
 @import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
 // endbower
@@ -96,7 +97,7 @@ body {
 }
 .number {
     border: 1px solid #FFF;
-    background-color: #3EB9E9;
+    background-color: $default-blue;
     width: 10%;
     float: left;
     font-weight: bold;
@@ -109,27 +110,104 @@ body {
 .current {
     float: right;
     background-color: #000000;
-    cursor:pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    padding: 5px;
 }
 .last {
     font-size: 20px;
     float: right;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
+    font-size: 25px;
+    padding: 5px;
     background-color: #929292;
 }
 .chosen {
     background-color: #E611B3;
 }
-.fullscreen {
+.fullscreen-number {
     margin: 0 auto;
-    color: #000;
-    border: 1px solid #000000;
-    background-color: #FFFFFF;
-    position: relative;
+    color: #FFF;
     width: 100%;
     height: 500px;
     font-weight: bold;
-    font-size: 300px;
+    font-size: 270px;
     text-align: center;
+}
+.numbers {
+    overflow:hidden;
+    background-color: #FFF;
+}
+.number-container {
+
+    margin-right: auto;
+margin-left: auto;
+display: table;
+}
+/* keyframes for animation;  simple 0 to 360 */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.ball-text {
+display: block;
+    color: #FFF;
+    font-size: 180px;
+    text-align: center;
+    font-weight: bold;
+    padding-top : 20px;
+}
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+}
+.ball:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+  -webkit-filter: blur(5px);
+  z-index: 2;
+}
+
+.ball .shadow {
+position: absolute;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+-webkit-transform: rotateX(90deg) translateZ(-150px);
+-moz-transform: rotateX(90deg) translateZ(-150px);
+-ms-transform: rotateX(90deg) translateZ(-150px);
+-o-transform: rotateX(90deg) translateZ(-150px);
+transform: rotateX(90deg) translateZ(-150px);
+z-index: -1;
+}
+.stage {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  margin: 20px;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -ms-perspective: 1200px;
+  -o-perspective: 1200px;
+  perspective: 1200px;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  -o-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
 }
